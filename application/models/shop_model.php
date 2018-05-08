@@ -47,14 +47,14 @@ class Shop_model extends CI_Model
         return $query;
     }
 
-    public function save_cart_to_database($cust_data, $order_data){
-      $this->db->insert('customer', $cust_data);
-      $order_data['cust_id'] = $this->db->insert_id();
-      if ($this->db->insert('orders', $order_data)) {
-        return true;
-      } else {
-        return false;
-      }
-
+    public function save_cart_to_database($cust_data, $order_data)
+    {
+        $this->db->insert('customer', $cust_data);
+        $order_data['cust_id'] = $this->db->insert_id();
+        if ($this->db->insert('orders', $order_data)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
