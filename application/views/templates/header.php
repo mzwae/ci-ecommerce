@@ -33,6 +33,7 @@
             <?php if ($this->session->userdata('logged_in')) : ?>
               <li><a href="<?=base_url();?>signin/signout">Logout</a></li>
             <?php endif; ?>
+            <li><a href="shop/display_cart"><?=($items > 0)? 'Items($items)':'Items(0)' ?></a></li>
           </ul>
       </div>
     </div>
