@@ -7,7 +7,7 @@
           <h2><?=$row->product_name?></h2>
           <p><?=$row->product_price?></p>
           <p><?=$row->product_description?></p>
-          <a href="shop/add/<?=$row_product_id?>" class="btn btn-success">Add to Cart</a>
+          <a href="shop/add/<?=$row->product_id?>" class="btn btn-success">Add to Cart</a>
         </div>
       <?php endforeach ; ?>
     </div>
@@ -21,5 +21,5 @@
       <?php endforeach; ?>
     </div>
   </div>
-  
+
 </div>

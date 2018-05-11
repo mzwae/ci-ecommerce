@@ -22,7 +22,7 @@ class Shop extends MY_Controller
             $data['query'] = $this->Shop_model->get_all_products_by_category_name($this->uri->segment(3));
         }
 
-        $data['$cat_query'] = $this->Shop_model->get_all_categories();
+        $data['cat_query'] = $this->Shop_model->get_all_categories();
         $cart_contents = $this->session->userdata('$cart_contents');
         $data['items'] = $cart_contents['total_items'];
 
