@@ -23,9 +23,11 @@ class Shop_model extends CI_Model
 
     public function get_all_products_by_category_name($cat_url_name = null)
     {
+
         if ($cat_url_name) {
             $this->db->where('cat_url_name', $cat_url_name);
             $cat_query = $this->db->get('categories');
+            $category_id = '';
 
             foreach ($cat_query->result() as $row) {
                 $category_id = $row->cat_id;
@@ -35,7 +37,7 @@ class Shop_model extends CI_Model
         }
 
         $query = $this->db->get('products');
-        return $qeury;
+        return $query;
     }
 
     public function get_all_categories($cat_url_name = null)

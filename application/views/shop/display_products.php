@@ -17,7 +17,7 @@
     <div class="list-group">
       <a href="<?=base_url()?>" class="list-group-item">Categories</a>
       <?php foreach ($cat_query->result() as $row): ?>
-        <a href="shop/index/<?=$row->cat_url_name?>" class="list-group-item"><?=$row->cat_name?></a>
+        <a href="<?=base_url()?>shop/index/<?=$row->cat_url_name?>" class="list-group-item"><?=$row->cat_name?></a>
       <?php endforeach; ?>
     </div>
   </div>

@@ -51,7 +51,7 @@ class Shop extends MY_Controller
       $data['items'] = $cart_contents['total_items'];
 
       $this->load->view('templates/header', $data);
-      $this->load->view('shop/display_products', $data);
+      $this->load->view('shop/display_cart', $data);
       $this->load->view('templates/footer');
     }
 
@@ -59,7 +59,7 @@ class Shop extends MY_Controller
     public function update_cart(){
       $data = array();
       $i = 0;
-      foreach ($this->input-post() as $item) {
+      foreach ($this->input->post() as $item) {
         $data[$i]['rowid'] = $item['rowid'];
         $data[$id]['qty'] = $item['qty'];
         $i++;
@@ -76,7 +76,7 @@ class Shop extends MY_Controller
       $data['items'] = $cart_contents['total_items'];
 
       $this->load->view('templates/header', $data);
-      $this->load->view('shop/display_products', $data);
+      $this->load->view('shop/display_cart', $data);
       $this->load->view('templates/footer');
 
 
@@ -118,7 +118,7 @@ class Shop extends MY_Controller
         );
         $data['email'] = array(
           'name' => 'email',
-          'class' => 'formcontrol',
+          'class' => 'form-control',
           'id' => 'email',
           'value' => set_value('email', ''),
           'maxlength' => '100',
@@ -157,13 +157,13 @@ class Shop extends MY_Controller
         $data['items'] = $cart_contents['total_items'];
 
         $this->load->view('templates/header', $data);
-        $this->load->view('shop/display_products', $data);
+        $this->load->view('shop/user_details', $data);
         $this->load->view('templates/footer');
       } else { // no errors in the form
         $cust_data = array(
-          'cust_first_name' => $this->input->post('cust_first_name'),
-          'cust_last_name' => $this->input->post('cust_last_name'),
-          'cust_email' => $this->input->post('cust_email'),
+          'cust_first_name' => $this->input->post('first_name'),
+          'cust_last_name' => $this->input->post('last_name'),
+          'cust_email' => $this->input->post('email'),
           'cust_address' => $this->input->post('payment_address')
         );
 

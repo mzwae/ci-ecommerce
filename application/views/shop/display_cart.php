@@ -1,4 +1,4 @@
-<a href="shop/user_details" type="button" class="btn btn-success btn-lg">Proceed to checkout</a>
+<a href="<?=base_url()?>shop/user_details" type="button" class="btn btn-success btn-lg">Proceed to checkout</a>
 <br>
 <br>
 <?php echo form_open('shop/update_cart'); ?>
