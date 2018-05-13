@@ -23,7 +23,7 @@ class Shop extends MY_Controller
         }
 
         $data['cat_query'] = $this->Shop_model->get_all_categories();
-        $cart_contents = $this->session->userdata('$cart_contents');
+        $cart_contents = $this->session->userdata('cart_contents');
         $data['items'] = $cart_contents['total_items'];
 
         $this->load->view('templates/header', $data);
@@ -47,7 +47,7 @@ class Shop extends MY_Controller
       $this->cart->insert($data);
 
       $data['cat_query'] = $this->Shop_model->get_all_categories();
-      $cart_contents = $this->session->userdata('$cart_contents');
+      $cart_contents = $this->session->userdata('cart_contents');
       $data['items'] = $cart_contents['total_items'];
 
       $this->load->view('templates/header', $data);
@@ -72,14 +72,12 @@ class Shop extends MY_Controller
 
     public function display_cart(){
       $data['cat_query'] = $this->Shop_model->get_all_categories();
-      $cart_contents = $this->session->userdata('$cart_contents');
+      $cart_contents = $this->session->userdata('cart_contents');
       $data['items'] = $cart_contents['total_items'];
 
       $this->load->view('templates/header', $data);
       $this->load->view('shop/display_cart', $data);
       $this->load->view('templates/footer');
-
-
     }
 
     public function clear_cart(){
@@ -153,7 +151,7 @@ class Shop extends MY_Controller
           'size' => '35',
           'placeholder' => 'Delivery Address'
         );
-        $cart_contents = $this->session->userdata('$cart_contents');
+        $cart_contents = $this->session->userdata('cart_contents');
         $data['items'] = $cart_contents['total_items'];
 
         $this->load->view('templates/header', $data);
